@@ -3,7 +3,7 @@ body {
     font-size: 1.2em;
 }
 #banner {
-    background-image: url('HeaderBack.jpg');
+    background-image: url('images/HeaderBack.jpg');
     background-size: cover;
     width: 100%;
     height: 150px;
