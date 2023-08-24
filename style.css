@@ -23,6 +23,20 @@ body {
     background-color: #EEE;
     position: sticky;
 }
+.twoCol {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+.twoCol2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.colR {
+    text-align: right;
+}
+.inner {
+    text-align: right;
+}
 .floatRt {
     float: none;
 }
@@ -57,8 +71,8 @@ body {
     .floatRt>img {
         float: right;
     }
-    .floatRt .inner {
-        float: right;
+    .inner button {
+        margin: 30px;
     }
     #banner {
         height: 250px;
@@ -72,8 +86,27 @@ body {
   }
 
 
-  @media (width < 900px) {
-    .floatRt .inner {
-        float: none;
+  @media (width < 980px) {
+    .inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .twoCol2 {
+        display: block;
+    }
+  }
+
+  @media (width < 750px) {
+    .twoCol {
+        display: block;
+    }
+    .colR {
+        text-align: left;
+        border-top:1px solid black;
+        padding-top:10px;
+        margin-top:30px;
+    }
+    .inner {
+        margin-bottom:15px;
     }
   }
