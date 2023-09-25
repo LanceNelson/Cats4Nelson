@@ -83,6 +83,13 @@ h3 {
     cursor: pointer;
 }
 
+#privacy {
+    position: absolute;
+    bottom:10px;
+    right:10px;
+    z-index: 9;
+}
+
 @media (width > 700px) {
     .floatRt>img {
         float: right;
