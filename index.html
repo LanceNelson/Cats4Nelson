@@ -41,6 +41,9 @@
 
                 <p>&nbsp;</p>
                 <h2 class="header">More Videos and Pictures</h2>
+                <h3>9/20/23</h3>
+                    Good Morning!<br/>
+                    <img src="images/Thumbnails/9_20_23_GoodMorning.jpg" title="Ralph wrapped in a blanket"/>
                 <h3>9/18/23</h3>
                 <a href="https://www.youtube.com/watch?v=ErpNzqsbdtM" target="_blank">
                     <img src="images/Thumbnails/SleepyBeans.jpg" title="Sleepy Beans" />
@@ -59,6 +62,8 @@
                 <a href="https://www.youtube.com/watch?v=welLJrX7WiE" target="_blank">
                     <img src="images/Thumbnails/PlayfulKittins.jpg" title="Playful Kittens" />
                 </a>
+                <button type="button" class="btn" id="btnMore">Load More</button>
+                <div style="display:none" id="eof">End Of Feed</div>
             </div>
             <div class="colR twoCol2">
                 <div class="inner">
@@ -106,6 +111,13 @@
     Disclaimer: we make a minor percentage off sales via the Amazon links
 </div>
 
+
+<script type="text/javascript">
+    document.getElementById("btnMore").addEventListener("click", (event) => {
+            document.getElementById("btnMore").style.display = "none";
+            document.getElementById("eof").style.display = "block";
+    })
+</script>
 </body>
 </html>
 
