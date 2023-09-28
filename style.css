@@ -84,7 +84,7 @@ h3 {
 }
 
 #privacy {
-    position: absolute;
+    position: fixed;
     bottom:10px;
     right:10px;
     z-index: 9;
