@@ -43,7 +43,8 @@ console.log(document.location.href);
             });
         document.getElementById("btnMore").addEventListener("click", function() {
             document.getElementById("loading").style.display = "block";
-            fetch('https://cats4api.azure-api.net/Posts?p=')
+            var pg = parseInt(document.getElementById("currPg")) + 1;
+            fetch('https://cats4api.azure-api.net/Posts?p=' + pg)
                 .then(function(response){
                     return response.json();
                 })
@@ -72,7 +73,16 @@ console.log(document.location.href);
     
                         content.append(d);
                     }
+                    if(content.innerHTML == "")
+                        content.append("<p>No more items</p>");
                     document.getElementById("loading").style.display = "none";
+                    document.getElementById("currPg").value = pg;
+                })
+                .catch(error => {
+                    const d = document.createElement("p");
+                    d.innerHTML ="No more items";
+                    document.getElementById("moreContent").append(d);
+                    document.getElementById("loading").style.display = "none";                    
                 })
         });
     }
