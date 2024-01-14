@@ -43,7 +43,7 @@ console.log(document.location.href);
             });
         document.getElementById("btnMore").addEventListener("click", function() {
             document.getElementById("loading").style.display = "block";
-            var pg = parseInt(document.getElementById("currPg")) + 1;
+            var pg = parseInt(document.getElementById("currPg").value) + 1;
             fetch('https://cats4api.azure-api.net/Posts?p=' + pg)
                 .then(function(response){
                     return response.json();
