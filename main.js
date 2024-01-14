@@ -6,9 +6,9 @@ window.onload = function() {
     })
 console.log(document.location.href);
 
-    if(document.location.href == "https://www.cats4nelson.com" ||
-        document.location.href.indexOf("index.h") > 2 ||
-        document.location.href == "http://localhost/cats4nelson/") {
+    if (document.location.href.indexOf("index.h") > 2 ||
+        document.location.href.length < 29 ||
+        document.location.href == "http://localhost/cats4nelson/") {  
         fetch('https://cats4api.azure-api.net/Posts', {mode: "cors"})
             .then(function(response) {
                 return response.json();
@@ -33,7 +33,7 @@ console.log(document.location.href);
                         l.setAttribute("target","_blank");
                     }
                     const i = document.createElement("img");
-                    i.setAttribute("src", "images/Thumbnails/" + p.image);
+                    i.setAttribute("src", "https://nelsoncats.blob.core.windows.net/images/Thumbs/" + p.image);
                     l.append(i);
                     d.append(l);
 
@@ -66,7 +66,7 @@ console.log(document.location.href);
                             l.setAttribute("target","_blank");
                         }
                         const i = document.createElement("img");
-                        i.setAttribute("src", "images/Thumbnails/" + p.image);
+                        i.setAttribute("src", "https://nelsoncats.blob.core.windows.net/images/Thumbs/" + p.image);
                         l.append(i);
                         d.append(l);
     
@@ -85,7 +85,7 @@ console.log(document.location.href);
                 return response.json();
             })
             .then(function(myJson) {
-                document.getElementById("content").innerHTML = "<h2>" + myJson.title + "</h2><img src='images/Thumbnails/" + myJson.image + "'/><br/><h3>" + myJson.timestamp + 
+                document.getElementById("content").innerHTML = "<h2>" + myJson.title + "</h2><img src='https://nelsoncats.blob.core.windows.net/images/Thumbs/" + myJson.image + "'/><br/><h3>" + myJson.timestamp + 
                 "</h3><p>" + myJson.description + "</p><p>&nbsp;</p><p><button id='retBtn' class='btn' type='button'>Return</button></p>";
                 document.getElementById("retBtn").addEventListener("click", function() {
                     window.location.href = "https://www.cats4nelson.com";
