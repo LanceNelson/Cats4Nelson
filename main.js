@@ -5,9 +5,11 @@ window.onload = function() {
         //window.open("https://cats4nelson.myspreadshop.com");
     })
 console.log(document.location.href);
+    if(document.location.href.indexOf("/?") > 1)
+        window.location = "https://www.cats4nelson.com/index.html";
 
     if (document.location.href.indexOf("index.h") > 2 ||
-        document.location.href.length < 29 ||
+        document.location.href.length < 35 ||
         document.location.href == "http://localhost/cats4nelson/") {  
         fetch('https://cats4api.azure-api.net/Posts', {mode: "cors"})
             .then(function(response) {
@@ -46,6 +48,13 @@ console.log(document.location.href);
             var pg = parseInt(document.getElementById("currPg").value) + 1;
             fetch('https://cats4api.azure-api.net/Posts?p=' + pg)
                 .then(function(response){
+                    console.log(response);
+                    if(response.status == 404){
+                        d.innerHTML ="No more items";
+                        document.getElementById("moreContent").append(d);
+                        document.getElementById("loading").style.display = "none";      
+                    }
+
                     return response.json();
                 })
                 .then(function(myJson) {
@@ -98,7 +107,7 @@ console.log(document.location.href);
                 document.getElementById("content").innerHTML = "<h2>" + myJson.title + "</h2><img src='https://nelsoncats.blob.core.windows.net/images/Thumbs/" + myJson.image + "'/><br/><h3>" + myJson.timestamp + 
                 "</h3><p>" + myJson.description + "</p><p>&nbsp;</p><p><button id='retBtn' class='btn' type='button'>Return</button></p>";
                 document.getElementById("retBtn").addEventListener("click", function() {
-                    window.location.href = "https://www.cats4nelson.com";
+                    window.location.href = "https://www.cats4nelson.com/index.html";
                 });
                 document.getElementById("loading").style.display = "none";
             });
