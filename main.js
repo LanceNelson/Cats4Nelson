@@ -28,7 +28,7 @@ console.log(document.location.href);
                     if(p.url == null) {
                         d.append(p.title);
                         d.append(document.createElement("br"));
-                        l.setAttribute("href","?p=" + p.id);
+                        l.setAttribute("href","/pics.html?p=" + p.id);
                     }
                     else {
                         l.setAttribute("href", p.url)
@@ -69,7 +69,7 @@ console.log(document.location.href);
                         if(p.url == null) {
                             d.append(p.title);
                             d.append(document.createElement("br"));
-                            l.setAttribute("href","?p=" + p.id);
+                            l.setAttribute("href","/pics.html?p=" + p.id);
                         }
                         else {
                             l.setAttribute("href", p.url)
