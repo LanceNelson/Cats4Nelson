@@ -11,7 +11,7 @@ console.log(document.location.href);
     if (document.location.href.indexOf("index.h") > 2 ||
         document.location.href.length < 35 ||
         document.location.href == "http://localhost/cats4nelson/") {  
-        fetch('https://cats4api.azure-api.net/Posts', {mode: "cors"})
+        fetch('https://catsapiondemand.azure-api.net/Posts', {mode: "cors"})
             .then(function(response) {
                 return response.json();
             })
@@ -46,7 +46,7 @@ console.log(document.location.href);
         document.getElementById("btnMore").addEventListener("click", function() {
             document.getElementById("loading").style.display = "block";
             var pg = parseInt(document.getElementById("currPg").value) + 1;
-            fetch('https://cats4api.azure-api.net/Posts?p=' + pg)
+            fetch('https://catsapiondemand.azure-api.net/Posts?p=' + pg)
                 .then(function(response){
                     console.log(response);
                     if(response.status == 404){
@@ -99,7 +99,7 @@ console.log(document.location.href);
         document.getElementById("mainPage").remove();
         document.getElementById("btnMore").remove();
         var x = document.location.href.split('=')[1];
-        fetch('https://cats4api.azure-api.net/Post/' + x)
+        fetch('https://catsapiondemand.azure-api.net/Post/' + x)
             .then(function(response) {
                 return response.json();
             })

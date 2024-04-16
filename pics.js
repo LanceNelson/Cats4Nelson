@@ -11,7 +11,7 @@ window.onload = function() {
         document.getElementById("btnMore").remove();
         x = document.location.href.split('=')[1];
     }
-        fetch('https://cats4api.azure-api.net/Post/' + x)
+        fetch('https://catsapiondemand.azure-api.net/Post/' + x)
             .then(function(response) {
                 return response.json();
             })
