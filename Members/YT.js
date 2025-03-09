@@ -25,7 +25,7 @@ function oauthSignIn() {
   
     // Parameters to pass to OAuth 2.0 endpoint.
     var params = {'client_id': '677416655777-i1v9snk7kc4erhrdhdlfgdv2tgo4un2a.apps.googleusercontent.com',
-                  'redirect_uri': 'https://www.cats4nelson.com',
+                  'redirect_uri': 'https://www.cats4nelson.com/Members/YouTube.html',
                   'response_type': 'token',
                   'scope': 'https://www.googleapis.com/auth/youtube.force-ssl',
                   'include_granted_scopes': 'true',
