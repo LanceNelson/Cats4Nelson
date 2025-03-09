@@ -7,7 +7,7 @@
         <script type='text/javascript' src='main.js'></script>
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8105232895792115" crossorigin="anonymous"></script>
-        <script async src="/Members/YT.js"></script>
+        <script async src="/Members/YTs.js"></script>
     </head>
     <body>
         <div id="banner">
@@ -33,4 +33,23 @@
         <button id="tst">Test</button>
 
         <div id="res"></div>
+
+        <script>
+window.onload = function() {
+            
+  var btn = document.getElementById("tst");
+  btn.addEventListener("click", function(e) {
+    
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+        document.getElementById("res").innerHTML = this.responseText;
+      }
+      xhttp.open("GET", "https://www.googleapis.com/auth/youtube.channel-memberships.creator");
+      xhttp.send();
+
+  })
+
+}
+
+        </script>
 </html>
