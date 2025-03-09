@@ -1,6 +1,21 @@
 window.onload = function() {
     oauthSignIn();
 
+
+  var btn = document.getElementById("tst");
+  btn.addEventListener("click", function(e) {
+    
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+        document.getElementById("res").innerHTML = this.responseText;
+      }
+      xhttp.open("GET", "https://www.googleapis.com/auth/youtube.channel-memberships.creator");
+      xhttp.send();
+
+  })
+
+
+
 }
 
 
